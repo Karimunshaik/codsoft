@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator Application</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+  	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&family=REM:ital,wght@0,500;1,800&display=swap" rel="stylesheet">
+	<style type="text/css">
+		.container{
+	display: inline-grid;
+}
+.fields{
+	background: lightslategray;
+	border: 0;
+	padding:30px;
+	border-radius: 20px;
+}
+#button input{
+	box-shadow: 5px 2px 4px;
+	font-size: 15px;
+	cursor: pointer;
+	width: 50px;
+	height: 30px;
+	margin: 10px;
+	border:0;
+	outline: 0;
+}
+.input_btn{
+	display: flex;
+}
+
+.input_btn input{
+	display: flex;
+	flex: 1;
+	box-shadow: 0;
+	font-size: 20px;
+}
+input[type="button"]:hover{
+	background-color: thistle;
+
+}
+}
+h1{
+  	font-family: 'Dancing Script', cursive;
+    font-family: 'Lobster', cursive;
+}
+#btn_equals{
+	size: 10px;
+
+}
+	</style>
+	<script type="text/javascript" >
+		function fun(val){
+	var s=document.getElementById('val');
+	s.value += val;
+}
+function Clear(){
+	var c=document.getElementById('val');
+	c.value='';
+}
+function Delete(){
+	var d=document.getElementById('val');
+	d.value=d.value.slice(0,-1);
+}
+function result() {
+	var a=document.getElementById('val').value;
+	var b=eval(a);
+	document.getElementById('val').value=b;
+}
+	</script>
+</head>
+<center>
+<body>
+	
+<div class="container">
+	<div class="fields">
+		<form id="button">
+			<div >
+			<h1>CALCULATOR</h1>
+			</div class="clr">
+			<div class="input_btn">
+			<input id="val" type="text" required>
+			</div>
+			<section class="btns"></section>
+			<div>
+			<input id="c_btn"type="button" value="AC"  onclick="Clear()">
+			<input type="button" value="DE" onclick="Delete('DE')">
+			<input type="button" name="%" value="%" onclick="fun('%')">
+			<input type="button" name="/" value="/" onclick="fun('/')">
+			<br><br>
+			<input type="button" value="7" onclick="fun('7')">
+			<input type="button" value="8" onclick="fun('8')">
+			<input type="button" name="9" value="9" onclick="fun('9')">
+			<input type="button" name="*" value="*" onclick="fun('*')">
+			<br><br>
+			<input type="button" value="4" onclick="fun('4')">
+			<input type="button" value="5" onclick="fun('5')">
+			<input type="button" name="6" value="6" onclick="fun('6')">
+			<input type="button" name="-" value="-" onclick="fun('-')">
+			<br><br>
+			<input type="button" value="1" onclick="fun('1')">
+			<input type="button" value="2" onclick="fun('2')">
+			<input type="button" name="3" value="3" onclick="fun('3')">
+			<input type="button" name="+" value="+" onclick="fun('+')">
+			<br><br>
+			<input type="button" value="00" onclick="fun('00')">
+			<input type="button" value="0" onclick="fun('0')">
+			<input type="button" value="." onclick="fun('.')">
+			<input id="btn_equals" type="button" value="=" onclick="result()">
+			<br><br>
+		</div>
+		</form>
+</div>	
+</section>
+</body>
+</center>
+</html>
